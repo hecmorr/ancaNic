@@ -38,7 +38,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 const Text(
-                  'Todavia no tenes tu cuenta? Registrate',
+                  'Todavia no tenes tu cuenta? Creala.',
                   style: TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
                 ),
