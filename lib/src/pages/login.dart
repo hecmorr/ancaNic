@@ -36,7 +36,7 @@ class LoginPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 const Text(
                   'Todavia no tenes tu cuenta? Creala.',
                   style: TextStyle(
