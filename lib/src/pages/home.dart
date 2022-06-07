@@ -10,54 +10,60 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue.shade900.withOpacity(0.7),
-      child: SafeArea(
-        child: Scaffold(
-          backgroundColor: Colors.blue.shade200,
-          appBar: AppBar(
-            backgroundColor: Colors.blue.shade900,
-            title: const Text('AncaNic'),
-            centerTitle: true,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.blue.shade800,
+        body: Column(children: <Widget>[
+          Container(
+            margin: const EdgeInsets.only(top: 10),
+            height: 100,
+            width: 100,
+            child: Image.asset('assets/anca2.png'),
           ),
-          body: GridView.count(
-              padding: const EdgeInsets.all(5),
-              crossAxisCount: 2,
-              mainAxisSpacing: 20,
-              crossAxisSpacing: 10,
-              children: [
-                GameCard(
-                    title: 'Rompecabezas',
-                    image: 'assets/puzzle.png',
-                    color: Colors.blue.shade900,
-                    textColor: Colors.white),
-                GameCard(
-                    title: 'X 0',
-                    color: Colors.orange.shade700,
-                    image: 'assets/X0.png',
-                    textColor: Colors.white),
-                const GameCard(
-                    title: 'Fotos',
-                    color: Colors.lightBlue,
-                    image: 'assets/photo.jpg',
-                    textColor: Colors.white),
-                const GameCard(
-                    title: 'Galeria',
-                    color: Colors.yellow,
-                    image: 'assets/galeria.jpg',
-                    textColor: Colors.black87),
-                const GameCard(
-                    title: 'Pictograma',
-                    image: 'assets/pictograma.jpg',
-                    color: Colors.grey,
-                    textColor: Colors.black87),
-                GameCard(
-                    title: 'Avatar',
-                    color: Colors.blue.shade700,
-                    image: 'assets/avatar.jpg',
-                    textColor: Colors.white),
-              ]),
-        ),
+          const SizedBox(height: 5),
+          Flexible(
+            child: GridView.count(
+                padding: const EdgeInsets.all(5),
+                crossAxisCount: 2,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 10,
+                children: [
+                  GameCard(
+                      title: 'Rompecabezas',
+                      image: 'assets/puzzle2.jpg',
+                      color: Colors.grey.shade300,
+                      textColor: Colors.white),
+                  GameCard(
+                      title: 'X 0',
+                      color: Colors.yellow.shade700,
+                      image: 'assets/X0.png',
+                      textColor: Colors.white),
+                  const GameCard(
+                      title: 'Fotos',
+                      color: Colors.lightBlue,
+                      image: 'assets/photo.jpg',
+                      textColor: Colors.white),
+                  GameCard(
+                      title: 'Galeria',
+                      color: Colors.blue.shade400,
+                      image: 'assets/galeria.jpg',
+                      textColor: Colors.black87),
+                  GestureDetector(
+                    child: GameCard(
+                        title: 'Pictograma',
+                        image: 'assets/pictograma.jpg',
+                        color: Colors.orange.shade700,
+                        textColor: Colors.black87),
+                    onTap: () => Navigator.pushNamed(context, 'pictograma'),
+                  ),
+                  const GameCard(
+                      title: 'Avatar',
+                      color: Colors.grey,
+                      image: 'assets/avatar.jpg',
+                      textColor: Colors.white),
+                ]),
+          ),
+        ]),
       ),
     );
   }

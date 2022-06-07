@@ -25,8 +25,8 @@ class GameCard extends StatelessWidget {
           children: <Widget>[
             Image.asset(
               image,
-              height: 50,
-              width: 50,
+              height: 80,
+              width: 80,
             ),
             const SizedBox(height: 10),
             Text(title)
