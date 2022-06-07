@@ -14,16 +14,16 @@ class Pictograma extends StatefulWidget {
 
 class _PictogramaState extends State<Pictograma> {
   var pieces = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-  var images = [
-    'assets/anca.png',
-    'assets/anca2.png',
-    'assets/avatar.jpg',
-    'assets/X0.png',
-    'assets/puzzle2.jpg',
-    'assets/pictograma.jpg',
-    'assets/galeria.jpg',
-    'assets/dientes.png'
-  ];
+  // var images = [
+  //   'assets/anca.png',
+  //   'assets/anca2.png',
+  //   'assets/avatar.jpg',
+  //   'assets/X0.png',
+  //   'assets/puzzle2.jpg',
+  //   'assets/pictograma.jpg',
+  //   'assets/galeria.jpg',
+  //   'assets/dientes.png'
+  // ];
   bool isActive = false;
 
   @override
@@ -49,7 +49,7 @@ class _PictogramaState extends State<Pictograma> {
                 title: 'Pictograma',
               ),
               const SizedBox(height: 100),
-              Flexible(child: PictoGrid(pieces, size, clickGrid, images)),
+              Flexible(child: PictoGrid(size, clickGrid, pieces)),
             ],
           ),
         ),

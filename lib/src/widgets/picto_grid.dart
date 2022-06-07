@@ -4,11 +4,20 @@ import 'grid_button.dart';
 
 class PictoGrid extends StatelessWidget {
   var pieces = [];
-  var images = [];
+  var images = [
+    'assets/anca.png',
+    'assets/anca2.png',
+    'assets/avatar.jpg',
+    'assets/X0.png',
+    'assets/puzzle2.jpg',
+    'assets/pictograma.jpg',
+    'assets/galeria.jpg',
+    'assets/dientes.png'
+  ];
   var size;
   Function clickGrid;
 
-  PictoGrid(this.images, this.size, this.clickGrid, this.pieces);
+  PictoGrid(this.size, this.clickGrid, this.pieces);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +46,10 @@ class PictoGrid extends StatelessWidget {
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
-                    child: Text('${pieces[index]}'),
+                    child: Image.asset(
+                      '${images[pieces[index] - 1]}',
+                      fit: BoxFit.cover,
+                    ),
                   )
                 : SizedBox.shrink();
           },
