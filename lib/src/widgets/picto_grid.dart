@@ -5,23 +5,26 @@ import 'grid_button.dart';
 class PictoGrid extends StatelessWidget {
   var pieces = [];
   var images = [
-    'assets/anca.png',
-    'assets/anca2.png',
-    'assets/avatar.jpg',
-    'assets/X0.png',
-    'assets/puzzle2.jpg',
-    'assets/pictograma.jpg',
-    'assets/galeria.jpg',
-    'assets/dientes.png'
+    'assets/pasta.jpg',
+    'assets/cepillo.jpg',
+    'assets/dientes.png',
+    'assets/agua.jpg',
+    'assets/lavar_cepillo.jpg',
+    'assets/poner_enjuague.jpg',
+    'assets/enjuagarse.jpg',
+    'assets/escupir.jpg'
+    // 'assets/lavar_cepillo.jpg'
   ];
   var size;
   Function clickGrid;
 
-  PictoGrid(this.size, this.clickGrid, this.pieces);
+  PictoGrid(this.size, this.clickGrid, this.pieces, {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final height = size.height;
+
     return Container(
       height: height * 0.90,
       child: Padding(
@@ -32,26 +35,36 @@ class PictoGrid extends StatelessWidget {
           itemCount: pieces.length,
           itemBuilder: (context, index) {
             return pieces[index] != 0
-                ? ElevatedButton(
-                    onPressed: () {
-                      clickGrid(index);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
+                ? Expanded(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        clickGrid(index);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shadowColor: Colors.black,
+                        primary: Colors.blue.shade900,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        textStyle: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       ),
-                      primary: Colors.red.shade200,
-                      textStyle: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    child: Image.asset(
-                      '${images[pieces[index] - 1]}',
-                      fit: BoxFit.cover,
+                      child: Container(
+                        height: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          image: DecorationImage(
+                            alignment: Alignment.center,
+                            fit: BoxFit.cover,
+                            image: AssetImage('${images[pieces[index] - 1]}'),
+                          ),
+                        ),
+                      ),
                     ),
                   )
-                : SizedBox.shrink();
+                : const SizedBox.shrink();
           },
         ),
       ),

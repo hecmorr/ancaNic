@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:anca/src/widgets/time.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -14,17 +17,11 @@ class Pictograma extends StatefulWidget {
 
 class _PictogramaState extends State<Pictograma> {
   var pieces = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-  // var images = [
-  //   'assets/anca.png',
-  //   'assets/anca2.png',
-  //   'assets/avatar.jpg',
-  //   'assets/X0.png',
-  //   'assets/puzzle2.jpg',
-  //   'assets/pictograma.jpg',
-  //   'assets/galeria.jpg',
-  //   'assets/dientes.png'
-  // ];
   bool isActive = false;
+  int secondsPassed = 0;
+
+  Timer? timer;
+  static const duration = Duration(seconds: 1);
 
   @override
   void initState() {
@@ -35,6 +32,11 @@ class _PictogramaState extends State<Pictograma> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
+    timer ??= Timer.periodic(duration, (t) {
+      startTime();
+    });
+
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -50,6 +52,11 @@ class _PictogramaState extends State<Pictograma> {
               ),
               const SizedBox(height: 100),
               Flexible(child: PictoGrid(size, clickGrid, pieces)),
+              Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [resetButton(), Time(secondsPassed)]),
+              const SizedBox(height: 50)
             ],
           ),
         ),
@@ -57,7 +64,23 @@ class _PictogramaState extends State<Pictograma> {
     );
   }
 
+  ElevatedButton resetButton() {
+    return ElevatedButton(
+      onPressed: reset,
+      style: ElevatedButton.styleFrom(
+        primary: Colors.orange,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+      ),
+      child: const Text('Reordenar el tablero'),
+    );
+  }
+
   void clickGrid(index) {
+    if (secondsPassed == 0) {
+      isActive = true;
+    }
     if (index - 1 >= 0 && pieces[index - 1] == 0 && index % 3 != 0 ||
         index + 1 < 9 && pieces[index + 1] == 0 && (index + 1) % 3 != 0 ||
         index - 3 >= 0 && pieces[index - 3] == 0 ||
@@ -65,6 +88,22 @@ class _PictogramaState extends State<Pictograma> {
       setState(() {
         pieces[pieces.indexOf(0)] = pieces[index];
         pieces[index] = 0;
+      });
+    }
+  }
+
+  void reset() {
+    setState(() {
+      pieces.shuffle();
+      isActive = false;
+      secondsPassed = 0;
+    });
+  }
+
+  void startTime() {
+    if (isActive) {
+      setState(() {
+        secondsPassed += 1;
       });
     }
   }
