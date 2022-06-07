@@ -4,10 +4,11 @@ import 'grid_button.dart';
 
 class PictoGrid extends StatelessWidget {
   var pieces = [];
+  var images = [];
   var size;
   Function clickGrid;
 
-  PictoGrid(this.pieces, this.size, this.clickGrid);
+  PictoGrid(this.images, this.size, this.clickGrid, this.pieces);
 
   @override
   Widget build(BuildContext context) {
