@@ -25,7 +25,7 @@ class GameCard extends StatelessWidget {
               BoxShadow(
                 color: Colors.black,
                 blurRadius: 10,
-                offset: Offset(0, 5),
+                offset: Offset(0, 3),
               )
             ]),
         child: Column(

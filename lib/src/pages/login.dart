@@ -51,8 +51,30 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-class _LoginForm extends StatelessWidget {
+class _LoginForm extends StatefulWidget {
   const _LoginForm({Key? key}) : super(key: key);
+
+  @override
+  State<_LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<_LoginForm> {
+  late FocusNode myFocusNode;
+
+  @override
+  void initState() {
+    super.initState();
+
+    myFocusNode = FocusNode();
+  }
+
+  @override
+  void dispose() {
+    // Clean up the focus node when the Form is disposed.
+    myFocusNode.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +82,7 @@ class _LoginForm extends StatelessWidget {
       child: Column(
         children: [
           TextFormField(
+            textInputAction: TextInputAction.next,
             autocorrect: false,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecorations.authInputDecoration(
@@ -70,6 +93,7 @@ class _LoginForm extends StatelessWidget {
           const SizedBox(height: 30),
           TextFormField(
             autocorrect: false,
+            textInputAction: TextInputAction.go,
             obscureText: true,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecorations.authInputDecoration(

@@ -1,4 +1,4 @@
-import 'package:anca/src/model/category_game.dart';
+import 'package:anca/src/widgets/category_game.dart';
 
 import 'package:flutter/material.dart';
 

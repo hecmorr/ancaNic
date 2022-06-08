@@ -1,23 +1,24 @@
 // ignore_for_file: unnecessary_new
 
 import 'dart:math';
-import 'package:anca/src/pages/my_paint.dart';
-import 'package:anca/src/pages/svg_wrapper.dart';
+
+import 'package:anca/src/widgets/my_paint.dart';
+import 'package:anca/src/widgets/svg_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:multiavatar/multiavatar.dart';
-import './my_paint.dart';
-import './svg_wrapper.dart';
+import '../widgets/my_paint.dart';
+import '../widgets/svg_wrapper.dart';
 
-class ProfileAvatar extends StatefulWidget {
-  const ProfileAvatar({Key? key}) : super(key: key);
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({Key? key}) : super(key: key);
 
   @override
-  State<ProfileAvatar> createState() => _ProfileAvatarState();
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class _ProfileAvatarState extends State<ProfileAvatar>
-    with AutomaticKeepAliveClientMixin {
+class _ProfilePageState extends State<ProfilePage> {
+  @override
   String svgCode = multiavatar('X-SLAYER');
   DrawableRoot? svgRoot;
   TextEditingController randomField = TextEditingController();
@@ -38,7 +39,6 @@ class _ProfileAvatarState extends State<ProfileAvatar>
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -148,8 +148,4 @@ class _ProfileAvatarState extends State<ProfileAvatar>
       ),
     );
   }
-
-  @override
-  // TODO: implement wantKeepAlive
-  bool get wantKeepAlive => true;
 }

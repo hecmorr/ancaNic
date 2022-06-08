@@ -1,11 +1,10 @@
-import 'package:anca/src/pages/avatar.dart';
 import 'package:anca/src/pages/home.dart';
 import 'package:anca/src/pages/pictograma.dart';
-import 'package:anca/src/pages/profile.dart';
 import 'package:anca/src/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'src/pages/profile_avatar.dart';
 import 'src/providers/games_provider.dart';
 
 void main() {
@@ -34,11 +33,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Anca',
-      initialRoute: 'home',
+      initialRoute: 'login',
       routes: {
         'login': (_) => const LoginPage(),
         'home': (_) => const HomePage(),
-        'avatar': (_) => const AvatarPage(),
         'profile': (_) => const ProfilePage(),
         'pictograma': (_) => const Pictograma(),
       },
