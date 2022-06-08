@@ -8,13 +8,13 @@ class ButtonLogin extends StatelessWidget {
     return GestureDetector(
       onTap: () => Navigator.pushReplacementNamed(context, 'home'),
       child: Container(
-        margin: EdgeInsets.only(top: 20),
+        margin: const EdgeInsets.only(top: 20),
         height: 50,
         width: 200,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
             color: Colors.blue.shade900),
-        child: Center(
+        child: const Center(
             child: Text(
           'Ingresar',
           style: TextStyle(

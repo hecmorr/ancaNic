@@ -1,8 +1,5 @@
-import 'package:anca/src/model/categorie_info.dart';
 import 'package:anca/src/model/category_game.dart';
-import 'package:anca/src/model/example_categories.dart';
-import 'package:anca/src/theme/colors.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'grid_button.dart';
-
+// ignore: must_be_immutable
 class PictoGrid extends StatelessWidget {
   var pieces = [];
   var images = [
@@ -13,10 +12,10 @@ class PictoGrid extends StatelessWidget {
     'assets/poner_enjuague.jpg',
     'assets/enjuagarse.jpg',
     'assets/escupir.jpg'
-    // 'assets/lavar_cepillo.jpg'
   ];
+  // ignore: prefer_typing_uninitialized_variables
   var size;
-  Function clickGrid;
+  final Function clickGrid;
 
   PictoGrid(this.size, this.clickGrid, this.pieces, {Key? key})
       : super(key: key);
@@ -25,7 +24,7 @@ class PictoGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = size.height;
 
-    return Container(
+    return SizedBox(
       height: height * 0.90,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -35,31 +34,29 @@ class PictoGrid extends StatelessWidget {
           itemCount: pieces.length,
           itemBuilder: (context, index) {
             return pieces[index] != 0
-                ? Expanded(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        clickGrid(index);
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shadowColor: Colors.black,
-                        primary: Colors.blue.shade900,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        textStyle: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                ? ElevatedButton(
+                    onPressed: () {
+                      clickGrid(index);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      shadowColor: Colors.black,
+                      primary: Colors.blue.shade900,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
-                      child: Container(
-                        height: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          image: DecorationImage(
-                            alignment: Alignment.center,
-                            fit: BoxFit.cover,
-                            image: AssetImage('${images[pieces[index] - 1]}'),
-                          ),
+                      textStyle: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    child: Container(
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        image: DecorationImage(
+                          alignment: Alignment.center,
+                          fit: BoxFit.cover,
+                          image: AssetImage('${images[pieces[index] - 1]}'),
                         ),
                       ),
                     ),

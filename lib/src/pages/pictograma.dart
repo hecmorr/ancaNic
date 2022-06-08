@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:anca/src/widgets/time.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import '../widgets/picto_grid.dart';
 import '../widgets/picto_title.dart';
@@ -128,7 +126,7 @@ class _PictogramaState extends State<Pictograma> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.00),
               ),
-              child: Container(
+              child: SizedBox(
                 height: 200,
                 child: Padding(
                   padding: const EdgeInsets.all(30),

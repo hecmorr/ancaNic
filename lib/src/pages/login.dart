@@ -3,7 +3,6 @@ import 'package:anca/src/widgets/card.dart';
 import 'package:anca/src/widgets/login_button.dart';
 import 'package:anca/ui/input_decorations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -57,31 +56,29 @@ class _LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Form(
-        child: Column(
-          children: [
-            TextFormField(
-              autocorrect: false,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecorations.authInputDecoration(
-                  hintText: 'gabo4210',
-                  labelText: 'Nombre de usuario',
-                  prefixIcon: Icons.person),
+    return Form(
+      child: Column(
+        children: [
+          TextFormField(
+            autocorrect: false,
+            keyboardType: TextInputType.emailAddress,
+            decoration: InputDecorations.authInputDecoration(
+                hintText: 'gabo4210',
+                labelText: 'Nombre de usuario',
+                prefixIcon: Icons.person),
+          ),
+          const SizedBox(height: 30),
+          TextFormField(
+            autocorrect: false,
+            obscureText: true,
+            keyboardType: TextInputType.emailAddress,
+            decoration: InputDecorations.authInputDecoration(
+              hintText: '*****',
+              labelText: 'Contraseña',
+              prefixIcon: Icons.lock_outline,
             ),
-            const SizedBox(height: 30),
-            TextFormField(
-              autocorrect: false,
-              obscureText: true,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecorations.authInputDecoration(
-                hintText: '*****',
-                labelText: 'Contraseña',
-                prefixIcon: Icons.lock_outline,
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

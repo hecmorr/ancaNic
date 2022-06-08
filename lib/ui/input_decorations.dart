@@ -1,4 +1,3 @@
-import 'package:anca/src/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class InputDecorations {
@@ -14,7 +13,7 @@ class InputDecorations {
             borderSide: BorderSide(color: Colors.blue.shade900, width: 2)),
         hintText: hintText,
         labelText: labelText,
-        labelStyle: TextStyle(color: Colors.grey),
+        labelStyle: const TextStyle(color: Colors.grey),
         prefixIcon: prefixIcon != null
             ? Icon(prefixIcon, color: Colors.blue.shade900)
             : null);

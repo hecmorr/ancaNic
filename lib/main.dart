@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'AncaNic',
-      initialRoute: 'home',
+      initialRoute: 'login',
       routes: {
         'login': (_) => const LoginPage(),
         'home': (_) => const HomePage(),
