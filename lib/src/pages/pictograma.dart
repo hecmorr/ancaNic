@@ -40,7 +40,7 @@ class _PictogramaState extends State<Pictograma> {
         body: Container(
           height: size.height,
           width: double.infinity,
-          color: Colors.lightBlue,
+          color: Colors.blue.shade900,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[

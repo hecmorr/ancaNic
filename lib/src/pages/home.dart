@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.blue.shade800,
+        backgroundColor: Colors.blue.shade900,
         body: Column(children: <Widget>[
           Container(
             margin: const EdgeInsets.only(top: 10),
@@ -53,11 +53,14 @@ class HomePage extends StatelessWidget {
                         textColor: Colors.black87),
                     onTap: () => Navigator.pushNamed(context, 'pictograma'),
                   ),
-                  const GameCard(
-                      title: 'Avatar',
-                      color: Colors.grey,
-                      image: 'assets/avatar.jpg',
-                      textColor: Colors.white),
+                  GestureDetector(
+                    child: const GameCard(
+                        title: 'Avatar',
+                        color: Colors.grey,
+                        image: 'assets/avatar.jpg',
+                        textColor: Colors.white),
+                    onTap: () => Navigator.pushNamed(context, 'profile'),
+                  ),
                 ]),
           ),
         ]),

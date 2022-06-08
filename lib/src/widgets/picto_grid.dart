@@ -40,7 +40,7 @@ class PictoGrid extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       shadowColor: Colors.black,
-                      primary: Colors.blue.shade900,
+                      primary: Colors.blue.shade100,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
@@ -50,12 +50,12 @@ class PictoGrid extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                     child: Container(
-                      height: 100,
+                      height: 110,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         image: DecorationImage(
                           alignment: Alignment.center,
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
                           image: AssetImage('${images[pieces[index] - 1]}'),
                         ),
                       ),

@@ -16,10 +16,18 @@ class GameCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        color: color,
-        elevation: 5,
+    return Container(
+        margin: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: color,
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black,
+                blurRadius: 10,
+                offset: Offset(0, 5),
+              )
+            ]),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[

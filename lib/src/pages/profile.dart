@@ -1,3 +1,4 @@
+import 'package:anca/src/pages/profile_avatar.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -5,10 +6,6 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      child: Center(
-        child: Text('This is the profile page'),
-      ),
-    );
+    return const ProfileAvatar();
   }
 }
