@@ -27,28 +27,28 @@ class HomePage extends StatelessWidget {
                 children: [
                   GameCard(
                       title: 'Rompecabezas',
-                      image: 'assets/puzzle2.jpg',
+                      image: 'assets/puzzle.jpg',
                       color: Colors.grey.shade300,
                       textColor: Colors.white),
                   GameCard(
                       title: 'X 0',
                       color: Colors.yellow.shade700,
-                      image: 'assets/X0.png',
+                      image: 'assets/juego.jpg',
                       textColor: Colors.white),
                   const GameCard(
                       title: 'Fotos',
                       color: Colors.lightBlue,
-                      image: 'assets/photo.jpg',
+                      image: 'assets/camera.jpg',
                       textColor: Colors.white),
                   GameCard(
                       title: 'Galeria',
                       color: Colors.blue.shade400,
-                      image: 'assets/galeria.jpg',
+                      image: 'assets/gallery.jpg',
                       textColor: Colors.black87),
                   GestureDetector(
                     child: GameCard(
                         title: 'Pictograma',
-                        image: 'assets/pictograma.jpg',
+                        image: 'assets/actividades.jpg',
                         color: Colors.orange.shade700,
                         textColor: Colors.black87),
                     onTap: () => Navigator.pushNamed(context, 'pictograma'),

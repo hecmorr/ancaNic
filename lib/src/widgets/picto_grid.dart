@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 class PictoGrid extends StatelessWidget {
   var pieces = [];
   var images = [
-    'assets/pasta.jpg',
-    'assets/cepillo.jpg',
+    'assets/paste.jpg',
     'assets/dientes.png',
-    'assets/agua.jpg',
-    'assets/lavar_cepillo.jpg',
-    'assets/poner_enjuague.jpg',
-    'assets/enjuagarse.jpg',
-    'assets/escupir.jpg'
+    'assets/tooth.jpg',
+    'assets/mirror.jpg',
+    'assets/sink.jpg',
+    'assets/teeth_brush.jpg',
+    'assets/girl.jpg',
+    'assets/front.jpg'
   ];
   // ignore: prefer_typing_uninitialized_variables
   var size;
